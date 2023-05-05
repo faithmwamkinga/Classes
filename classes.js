@@ -12,6 +12,21 @@
 // toggleAvailability that changes the isAvailable property to its opposite value (true to
 // false, false to true)
 
+class Car{
+    constructor (make,model,year,isAvailable,toggleAvailability){
+        this.make=make
+        this.model=model
+        this.year=year
+        this.isAvailable=isAvailable
+        this.toggleAvailability=toggleAvailability
+    }
+  toggleAvailability() {
+    this.toggleAvailability=!true
+ }
+}
+let car=new Car("Toyota","Camry",2000,true,)
+console.log(car);
+
 // 2) Create a Rental class or function constructor that has the following properties:
 // ● car (Car object): The car that has been rented.
 // ● renterName (string): The name of the person who rented the car.
