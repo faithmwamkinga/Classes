@@ -21,11 +21,12 @@ class Car{
         this.toggleAvailability=toggleAvailability
     }
   toggleAvailability() {
-    this.toggleAvailability=!true
+    this.toggleAvailability=!this.toggleAvailability
  }
 }
 let car=new Car("Toyota","Camry",2000,true,)
-console.log(car);
+console.log(car.isAvailable=!true);
+console.log();
 
 // 2) Create a Rental class or function constructor that has the following properties:
 // ● car (Car object): The car that has been rented.
@@ -38,6 +39,21 @@ console.log(car);
 // inventory. Then, create an instance of the Rental class or function constructor for
 // a rental involving the car you created. Finally, calculate the rental duration using
 // the calculateRentalDuration method.
+class Rental{
+   constructor(name,rentalStartDate,rentalEndDate){
+    name=name
+    rentalStartDate=rentalStartDate
+    rentalEndDate=rentalEndDate
+    function calculateRentalDuration(rentalStartDate,rentalEndDate) {
+      rentalDurationDays=rentalEndDate-rentalStartDate
+      return rentalDurationDays
+    }
+    calculateRentalDuration
+   }
+}
+let rentalCar = new Rental("Opa",1,31)
+ console.log(rentalCar.rentalDurationDays);
+
 
 // Question 2
 // You are building a simple quiz app that contains multiple-choice questions. Your task is
