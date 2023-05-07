@@ -41,18 +41,18 @@ console.log();
 // the calculateRentalDuration method.
 class Rental{
    constructor(name,rentalStartDate,rentalEndDate){
-    name=name
-    rentalStartDate=rentalStartDate
-    rentalEndDate=rentalEndDate
-    function calculateRentalDuration(rentalStartDate,rentalEndDate) {
-      rentalDurationDays=rentalEndDate-rentalStartDate
-      return rentalDurationDays
-    }
-    calculateRentalDuration
+    this.name=name
+    this.rentalStartDate=rentalStartDate
+    this.rentalEndDate=rentalEndDate
    }
+   calculateRentalDuration() {
+    let rentalDurationDays=this.rentalEndDate- this.rentalStartDate
+    return rentalDurationDays
+  }
+   
 }
 let rentalCar = new Rental("Opa",1,31)
- console.log(rentalCar.rentalDurationDays);
+ console.log(rentalCar.calculateRentalDuration());
 
 
 // Question 2
@@ -67,6 +67,25 @@ let rentalCar = new Rental("Opa",1,31)
 // The Question class should also have a method called checkAnswer that takes a
 // user's answer as a parameter and returns true if the answer is correct and false
 // otherwise.
+class Question{
+  constructor(text,options,correctAnswer){
+  text=this.text
+  options=this.options
+  correctAnswer=this.correctAnswer}
+   checkAnswer(answer) {
+    return answer===this.correctAnswer
+  }}
+  let   question="How many legs does a spider have?";
+  let choices=[2,3,8]
+  let correctAnswer=this.choices[2]
+  let user1 = new Question(question, choices, correctAnswer); 
+  if (question.checkAnswer(answer)){
+      return true
+    }
+    else{
+      return false
+    }
+    
 // 2. Create a Quiz class with the following properties:
 // ● questions(array):An array of Question objects.
 // ● currentQuestionIndex(number): The index of the current question in the
@@ -79,3 +98,32 @@ let rentalCar = new Rental("Opa",1,31)
 // currentQuestionIndex.
 // ● submitAnswer: Takes a user's answer as a parameter, checks if the answer is
 // correct using the checkAnswer method of the Question class, and updates the
+
+class Quiz{
+  constructor(questions,currentQuestionIndex,scoreNumber){
+    questions=this.questions
+    currentQuestionIndex=0;
+    scoreNumber=0;
+  }
+   questions=["What is my name?","What is my age","What do I like?"]
+  addQuestion(question){
+    addedQuestion=this.questions.push(question)
+    console.log(this.addQuestion(addedQuestion));
+  }
+  nextQuestion(){
+  this.currentQuestionIndex++
+  }
+  submitAnswer(answer) {
+    const currentQuestion = this.questions[this.currentQuestionIndex];
+
+    if (currentQuestion.checkAnswer(answer)) {
+      this.score++;
+    }
+
+    this.nextQuestion();
+  }
+
+}
+  let user2 = new Question(question, choices, correctAnswer); 
+
+
